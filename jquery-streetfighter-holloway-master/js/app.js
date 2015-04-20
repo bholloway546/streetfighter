@@ -1,0 +1,20 @@
+$(document).ready(function(){
+	$('.ryu').on('mouseenter',function(){
+		$('.ryu-still').hide()
+		$('.ryu-ready').show()
+	});
+	$('.ryu').on('mouseleave',function(){
+		$('.ryu-still').show()
+		$('.ryu-ready').hide()
+	});
+	$('.ryu').on('mousedown',function(){
+		$('.ryu-ready').hide()
+		$('.ryu-throwing').show()
+		$('.hadouken').show()
+
+	});
+	$('.ryu').on('mouseup',function(){
+		$('.ryu-ready').show()
+		$('.ryu-throwing').hide()
+	});
+});	

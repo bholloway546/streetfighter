@@ -18,6 +18,10 @@ body {
 	height: 494px;
 }
  
+.ryu-still{
+	display:block;
+}
+
 .ryu-still, .ryu-ready, .ryu-throwing {
 	width: 659px;
 	height: 494px;
@@ -56,7 +60,4 @@ body {
 	top: 167px;
 	left: 520px;
 	z-index: 10;
-}
-* {
-  outline: red 1px solid;
 }
