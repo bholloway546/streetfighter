@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	
-	playJumparound()
+	/*playJumparound()*/
+	doIntro()
 
 	$('.ryu').on('mouseenter',function(){
 		$('.ryu-still').hide()
@@ -36,8 +37,8 @@ $(document).ready(function(){
   }
 }) .on('keyup', function(e){
 		if (e.keyCode == 88) {
-			/*$('#cool')[0].pause();
-      		$('#cool')[0].load();*/
+			$('#delight-sound')[0].pause();
+      		$('#delight-sound')[0].load();
 			$('.ryu-still').show()
 			$('.ryu-cool').hide()
 		}
@@ -61,3 +62,27 @@ function playJumparound(){
 	$('#jumparound-sound')[0].load();
   	$('#jumparound-sound')[0].play();
 }
+
+function doIntro() {
+  $('#jumparound-sound')[0].volume = 0.3;
+  $('#jumparound-sound')[0].play();
+  $('#jumparound-sound').on('keydown', function(e){
+		if (e.keyCode == 87) {
+			$('#jumparound-sound')[0].pause();
+		};
+	});
+  $('.sf-logo').fadeIn(3500, function() {
+    $(this).fadeOut(1000, function() {
+      $('.brought-by').fadeIn(1500, function() {
+        $(this).fadeOut(1000, function() {
+          $('.jquery-logo').fadeIn(1500, function() {
+            $(this).fadeOut(1500, function() {
+              $('.instructions').fadeIn(1000);
+            });
+          })
+        })
+      })
+    })
+  })
+}
+
